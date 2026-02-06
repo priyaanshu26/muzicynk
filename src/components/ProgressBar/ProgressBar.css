@@ -1,0 +1,136 @@
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-2) 0;
+}
+
+.time-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    min-width: 40px;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-current {
+    text-align: right;
+}
+
+.time-duration {
+    text-align: left;
+}
+
+.progress-bar {
+    flex: 1;
+    position: relative;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.progress-bar:focus-visible {
+    outline: none;
+}
+
+.progress-bar:focus-visible .progress-track {
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.3);
+}
+
+.progress-track {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: visible;
+}
+
+.progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary-start), var(--color-accent));
+    border-radius: var(--radius-full);
+    transition: width 0.1s linear;
+}
+
+.progress-glow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0.6;
+    animation: progressGlow 2s ease-in-out infinite;
+}
+
+.progress-hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    pointer-events: none;
+}
+
+.progress-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background: var(--color-text-primary);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.progress-bar:hover .progress-thumb,
+.progress-bar:focus-visible .progress-thumb {
+    opacity: 1;
+}
+
+.progress-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-bg-secondary);
+    border: var(--glass-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Buffering state */
+.progress-bar.buffering .progress-fill {
+    animation: pulseScale 1s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+    .time-label {
+        font-size: 10px;
+        min-width: 32px;
+    }
+
+    .progress-track {
+        height: 4px;
+    }
+
+    .progress-thumb {
+        width: 12px;
+        height: 12px;
+    }
+}

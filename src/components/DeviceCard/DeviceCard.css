@@ -1,0 +1,113 @@
+.device-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.device-card.active {
+    background: var(--glass-bg-hover);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
+}
+
+.device-card.host {
+    border-color: var(--color-primary-start);
+}
+
+.device-icon-wrapper {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+}
+
+.device-card.active .device-icon-wrapper {
+    background: rgba(29, 185, 84, 0.15);
+    color: var(--color-accent);
+}
+
+.device-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.device-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 0;
+}
+
+.device-name {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.device-type {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.host-badge {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary-start);
+    background: rgba(102, 126, 234, 0.15);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.device-equalizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 20px;
+}
+
+.eq-bar {
+    width: 3px;
+    background: var(--color-accent);
+    border-radius: var(--radius-full);
+    animation: musicBar1 0.8s ease-in-out infinite;
+}
+
+.eq-bar:nth-child(2) {
+    animation: musicBar2 0.8s ease-in-out infinite;
+    animation-delay: 0.1s;
+}
+
+.eq-bar:nth-child(3) {
+    animation: musicBar3 0.8s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+
+@media (max-width: 480px) {
+    .device-card {
+        padding: var(--space-3);
+    }
+
+    .device-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+}

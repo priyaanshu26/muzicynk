@@ -1,0 +1,101 @@
+.toast-container {
+    position: fixed;
+    top: calc(var(--header-height) + var(--space-4));
+    right: var(--space-4);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 400px;
+    width: calc(100% - var(--space-8));
+}
+
+.toast {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--color-bg-secondary);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.toast-info {
+    border-left: 3px solid var(--color-primary-start);
+}
+
+.toast-success {
+    border-left: 3px solid var(--color-accent);
+}
+
+.toast-error {
+    border-left: 3px solid #ff5252;
+}
+
+.toast-warning {
+    border-left: 3px solid #ffc107;
+}
+
+.toast-icon {
+    flex-shrink: 0;
+}
+
+.toast-info .toast-icon {
+    color: var(--color-primary-start);
+}
+
+.toast-success .toast-icon {
+    color: var(--color-accent);
+}
+
+.toast-error .toast-icon {
+    color: #ff5252;
+}
+
+.toast-warning .toast-icon {
+    color: #ffc107;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
+}
+
+.toast-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+}
+
+.toast-close:hover {
+    background: var(--glass-bg);
+    color: var(--color-text-primary);
+}
+
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary-start), var(--color-accent));
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+@media (max-width: 480px) {
+    .toast-container {
+        right: var(--space-2);
+        left: var(--space-2);
+        width: auto;
+        max-width: none;
+    }
+}

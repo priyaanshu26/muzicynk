@@ -1,0 +1,29 @@
+
+> muzicynk@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2171 modules transformed.
+Γ£ù Build failed in 5.01s
+error during build:
+src/pages/HostPage/HostPage.jsx (3:37): "Broadcast" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js", imported by "src/pages/HostPage/HostPage.jsx".
+file: E:/Project/muzicynk/src/pages/HostPage/HostPage.jsx:3:37
+
+1: import { useState, useCallback, useEffect } from 'react';
+2: import { motion } from 'framer-motion';
+3: import { QrCode, Link2, Copy, Check, Broadcast, StopCircle } from 'lucide-react';
+                                        ^
+4: import {
+5:     Header,
+
+    at getRollupError (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at Module.error (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:17452:29)
+    at ModuleScope.findVariable (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:15070:39)
+    at ReturnValueScope.findVariable (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:5673:38)
+    at FunctionBodyScope.findVariable (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:5673:38)
+    at Identifier.bind (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:5447:40)
+    at CallExpression.bind (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at CallExpression.bind (file:///E:/Project/muzicynk/node_modules/rollup/dist/es/shared/node-entry.js:12179:15)

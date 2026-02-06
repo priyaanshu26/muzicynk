@@ -1,0 +1,91 @@
+.background-effects {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Animated Gradient Background */
+.gradient-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            var(--color-bg-primary) 0%,
+            var(--color-bg-secondary) 50%,
+            var(--color-bg-primary) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+/* Particles */
+.particles-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    bottom: -20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+            var(--color-primary-start),
+            var(--color-accent));
+    filter: blur(1px);
+}
+
+/* Blur Orbs */
+.blur-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--orb-color, var(--color-primary-start));
+    filter: blur(100px);
+    opacity: 0.15;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    left: 10%;
+}
+
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    right: 10%;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: 30%;
+}
+
+/* Noise Texture Overlay */
+.noise-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    mix-blend-mode: overlay;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .gradient-bg {
+        animation: none;
+    }
+
+    .particle {
+        display: none;
+    }
+
+    .blur-orb {
+        animation: none !important;
+    }
+}

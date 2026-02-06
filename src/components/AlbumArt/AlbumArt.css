@@ -1,0 +1,143 @@
+/* Existing AlbumArt styles plus new additions */
+.album-art-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.generic-visual {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-primary));
+    color: var(--color-primary-start);
+}
+
+.generic-reflection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-secondary);
+    color: var(--color-primary-start);
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    color: #ff5252;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff5252;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff5252;
+}
+
+.paused-text {
+    font-weight: var(--font-weight-bold);
+    color: white;
+    opacity: 0.8;
+}
+
+/* Original size variations and other styles */
+.album-art-container.size-large {
+    width: 320px;
+    height: 320px;
+}
+
+.album-art-container.size-medium {
+    width: 240px;
+    height: 240px;
+}
+
+.album-art-container.size-small {
+    width: 160px;
+    height: 160px;
+}
+
+.vinyl-record {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinyl-grooves {
+    position: absolute;
+    inset: 10%;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, transparent 0, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+}
+
+.vinyl-label {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-cover {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: var(--shadow-xl);
+    background: var(--color-bg-secondary);
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-reflection {
+    position: absolute;
+    bottom: -50%;
+    width: 85%;
+    height: 85%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transform: scaleY(-1);
+    opacity: 0.3;
+    filter: blur(4px);
+}
+
+.album-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-primary-start) 0%, transparent 70%);
+    z-index: -2;
+    filter: blur(40px);
+}
