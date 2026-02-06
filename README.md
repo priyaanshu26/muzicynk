@@ -1,65 +1,140 @@
-# Muzicynk - Generic Audio Broadcast System
+# 🎧 Muzicynk — Real-Time Audio Broadcasting
 
-A modern, sleek web application that allows you to broadcast any audio from your laptop to any number of devices in real-time. Sync your sound across rooms, friends, or devices with zero configuration.
+Muzicynk is a real-time audio broadcasting web app that lets you stream audio from one device to multiple listeners instantly using a browser.
+No Spotify login. No file uploads. Just create a room and broadcast.
 
-## 🚀 Features
+Think of it as “screen sharing, but for audio.”
 
-- **Any Source**: Broadcast system audio, music players, or browser tabs.
-- **Low Latency**: Real-time audio relay using Socket.io and Web Audio API.
-- **Modern UI**: Sleek glassmorphism design with Framer Motion animations.
-- **Room Management**: Join via simple 6-digit codes or direct links.
-- **Cross-Platform**: Listen on any device (iOS, Android, Mac, PC).
- 
-## 💻 Host Compatibility
- 
-Broadcasting is supported on desktop operating systems due to system audio capture requirements:
-- ✅ **Windows** (Chrome/Edge recommended)
-- ✅ **macOS** (Chrome/Safari/Edge)
-- ❌ **Mobile** (Browsers cannot yet capture system audio)
- 
-## 📱 Listener Compatibility
-- ✅ **Any device** with a modern web browser (iOS, Android, Windows, Mac, Linux).
+---
+
+## 🚀 What Muzicynk Does
+
+- 🔊 Broadcast audio from your browser or system (desktop)
+- 👥 Multiple listeners can join using a room code
+- ⚡ Real-time streaming with low latency
+- 🌐 Works directly in the browser
+- 🎨 Smooth UI with animations
+
+---
+
+## 🧠 How It Works (High Level)
+
+1. Broadcaster creates a room
+2. Browser captures audio using the Web Audio API
+3. Audio chunks are sent via Socket.io
+4. Listeners receive and play audio in real time
+
+⚠️ Due to browser security restrictions, full system audio capture works best on desktop browsers (Chrome recommended).
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React + Vite + Framer Motion + Lucide Icons
-- **Backend**: Node.js + Express + Socket.io
-- **Audio**: Web Audio API (PCM Stream Processing)
+### Frontend
+- React (Vite)
+- Web Audio API
+- Framer Motion
+- Socket.io Client
 
-## 🏃 Running Locally
-
-### 1. Install Dependencies
-```bash
-npm install
-cd server
-npm install
-```
-
-### 2. Start the App (Development)
-You need to run both the server and the frontend:
-```bash
-# Terminal 1: Frontend
-npm run dev
-
-# Terminal 2: Backend
-cd server
-npm run dev
-```
-
-Visit `http://localhost:5173` to start.
-
-## 🌐 Deployment
-
-The app is production-ready and can be hosted on platforms like **Render**, **Railway**, or **Heroku**.
-
-1. **Build**: `npm run build`
-2. **Start**: `npm start` (Runs the Node server which handles both API and Frontend static files)
-
-## 📝 How to Broadcast
-1. Open the app as a **Host**.
-2. Click **Start Audio Broadcast**.
-3. In the browser popup, select a tab/screen and ensure **"Share system audio"** is checked.
-4. share your **Room Code** with others!
+### Backend
+- Node.js
+- Express
+- Socket.io
 
 ---
-Built with ❤️ by **Priyanshu Chaudhary** in collaboration with **AI**.
+
+## ✨ Features
+
+- 🎙️ Live audio broadcasting
+- 🧩 Room-based audio sharing
+- ⚡ Real-time communication
+- 💻 Desktop-focused experience
+- 🎨 Modern UI with animations
+
+---
+
+## 🧪 Browser Compatibility
+
+Browser Support:
+- Chrome (Desktop): ✅ Recommended
+- Edge (Desktop): ✅
+- Firefox: ⚠️ Limited
+- Mobile Browsers: ❌ Not Supported
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
+$ git clone https://github.com/priyaanshu26/muzicynk.git  
+$ cd muzicynk
+
+---
+
+### 2️⃣ Install dependencies
+
+Frontend:
+$ cd client  
+$ npm install  
+$ npm run dev  
+
+Backend:
+$ cd server  
+$ npm install  
+$ node index.js  
+
+---
+
+### 3️⃣ Environment Variables (Optional)
+
+Create a .env file inside the server folder:
+
+PORT=5000
+
+---
+
+## 🌍 Deployment
+
+You can deploy:
+- Frontend → Vercel / Netlify
+- Backend → Render / Railway / Heroku
+
+Make sure:
+- WebSocket connections are enabled
+- Frontend points to the correct backend URL
+
+---
+
+## 🚧 Known Limitations
+
+- Browser restrictions limit system audio capture
+- Mobile browsers do not support required APIs
+- Audio quality depends on network stability
+
+---
+
+## 🔮 Future Improvements
+
+- 🎚️ Audio quality controls
+- 💬 In-room chat
+- 🔐 Authentication for rooms
+- 🎧 Multiple broadcasters
+- 📱 Progressive Web App (PWA) support
+
+---
+
+## 👨‍💻 Author
+
+Priyanshu  
+Computer Science Engineering Student  
+Interested in full-stack development and real-time systems
+
+---
+
+## ⭐ Support
+
+If you find this project interesting:
+- Star the repository ⭐
+- Open issues for bugs or feature requests
+- Contributions are welcome 🤝
