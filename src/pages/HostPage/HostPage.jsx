@@ -11,7 +11,8 @@ import {
     DeviceCard,
     MusicVisualizer,
     ToastContainer,
-    BackgroundEffects
+    BackgroundEffects,
+    Footer
 } from '../../components';
 import { broadcastService } from '../../services/AudioBroadcast';
 import './HostPage.css';
@@ -194,12 +195,7 @@ const HostPage = () => {
                 </motion.div>
             </main>
 
-            <footer className="host-footer">
-                <div className="footer-content">
-                    <p className="footer-credits">Handcrafted with <span className="heart">❤️</span> by <span className="dev-name">Priyanshu Chaudhary</span> & <span className="ai-credit">Antigravity</span></p>
-                    <p className="footer-version">Muzicynk v2.0.0</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

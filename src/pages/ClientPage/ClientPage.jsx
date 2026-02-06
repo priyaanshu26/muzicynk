@@ -10,7 +10,8 @@ import {
     VolumeSlider,
     MusicVisualizer,
     BackgroundEffects,
-    ToastContainer
+    ToastContainer,
+    Footer
 } from '../../components';
 import { receiverService } from '../../services/AudioReceiver';
 import './ClientPage.css';
@@ -159,12 +160,7 @@ const ClientPage = () => {
                 </motion.div>
             </main>
 
-            <footer className="client-footer">
-                <div className="brand">
-                    <span className="brand-name">Muzicynk Listener</span>
-                    <span className="dev-attribution">Handcrafted with ❤️ by Priyanshu Chaudhary & Antigravity</span>
-                </div>
-            </footer>
+            <Footer version="v2.0.0 (Listener)" />
         </div >
     );
 };

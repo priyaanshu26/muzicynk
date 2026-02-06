@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Moon, Wifi, WifiOff, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({
@@ -53,7 +54,7 @@ const Header = ({
     >
       <div className="header-content">
         {/* Logo */}
-        <div className="header-logo">
+        <Link to="/" className="header-logo">
           <motion.div
             className="logo-icon"
             whileHover={{ scale: 1.05 }}
@@ -75,7 +76,7 @@ const Header = ({
             </svg>
           </motion.div>
           <span className="logo-text">Muzicynk</span>
-        </div>
+        </Link>
 
         {/* Right Section */}
         <div className="header-right">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Radio, Users, Play, Headphones } from 'lucide-react';
-import { BackgroundEffects, Header } from '../../components';
+import { BackgroundEffects, Header, Footer } from '../../components';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -108,9 +108,7 @@ const LandingPage = () => {
                 </motion.div>
             </main>
 
-            <footer className="landing-footer">
-                <p>Handcrafted with <span className="heart">❤️</span> by <span className="dev-name">Priyanshu Chaudhary</span> & <span className="ai-credit">Antigravity AI</span></p>
-            </footer>
+            <Footer />
         </div>
     );
 };

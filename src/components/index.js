@@ -9,3 +9,4 @@ export { default as TrackInfo } from './TrackInfo/TrackInfo';
 export { default as DeviceCard } from './DeviceCard/DeviceCard';
 export { default as Toast, ToastContainer } from './Toast/Toast';
 export { default as BackgroundEffects } from './BackgroundEffects/BackgroundEffects';
+export { default as Footer } from './Footer/Footer';
