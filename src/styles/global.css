@@ -303,6 +303,54 @@ textarea:focus {
     color: var(--color-accent);
 }
 
+.dev-name {
+    color: var(--color-primary-start);
+    font-weight: var(--font-weight-semibold);
+}
+
+.ai-credit {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: var(--font-weight-bold);
+}
+
+.dev-attribution {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-left: var(--space-2);
+}
+
+.heart {
+    display: inline-block;
+    color: #ff5252;
+    animation: heartBeat 1.5s ease-in-out infinite;
+    margin: 0 4px;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.1);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
+
 .font-medium {
     font-weight: var(--font-weight-medium);
 }

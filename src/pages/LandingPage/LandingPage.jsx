@@ -109,7 +109,7 @@ const LandingPage = () => {
             </main>
 
             <footer className="landing-footer">
-                <p>&copy; 2026 Muzicynk. All rights reserved.</p>
+                <p>Handcrafted with <span className="heart">❤️</span> by <span className="dev-name">Priyanshu Chaudhary</span> & <span className="ai-credit">Antigravity AI</span></p>
             </footer>
         </div>
     );

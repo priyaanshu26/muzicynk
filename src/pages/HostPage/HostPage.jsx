@@ -196,8 +196,8 @@ const HostPage = () => {
 
             <footer className="host-footer">
                 <div className="footer-content">
-                    <p className="footer-credits">Muzicynk Generic Broadcast System</p>
-                    <p className="footer-version">v2.0.0 (Socket.io)</p>
+                    <p className="footer-credits">Handcrafted with <span className="heart">❤️</span> by <span className="dev-name">Priyanshu Chaudhary</span> & <span className="ai-credit">Antigravity</span></p>
+                    <p className="footer-version">Muzicynk v2.0.0</p>
                 </div>
             </footer>
         </div>

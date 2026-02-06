@@ -52,4 +52,4 @@ The app is production-ready and can be hosted on platforms like **Render**, **Ra
 4. share your **Room Code** with others!
 
 ---
-Built with ❤️ for synchronized music experiences.
+Built with ❤️ by **Priyanshu Chaudhary** in collaboration with **Antigravity AI**.

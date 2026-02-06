@@ -162,6 +162,7 @@ const ClientPage = () => {
             <footer className="client-footer">
                 <div className="brand">
                     <span className="brand-name">Muzicynk Listener</span>
+                    <span className="dev-attribution">Handcrafted with ❤️ by Priyanshu Chaudhary & Antigravity</span>
                 </div>
             </footer>
         </div >
