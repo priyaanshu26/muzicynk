@@ -7,8 +7,16 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-// Serve static files from the Vite build directory
-app.use(express.static(path.join(__dirname, '../dist')));
+// Serve static files from the Vite build directory if it exists
+const distPath = path.join(__dirname, '../dist');
+if (require('fs').existsSync(distPath)) {
+    app.use(express.static(distPath));
+} else {
+    console.log('Static files not found at:', distPath);
+    app.get('/', (req, res) => {
+        res.send('Muzicynk Backend is Running 🚀');
+    });
+}
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -88,9 +96,14 @@ io.on('connection', (socket) => {
     });
 });
 
-// SPA Routing: Serve index.html for any unknown routes
+// SPA Routing: Serve index.html for any unknown routes if it exists
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
+    const indexPath = path.join(__dirname, '../dist/index.html');
+    if (require('fs').existsSync(indexPath)) {
+        res.sendFile(indexPath);
+    } else {
+        res.status(404).send('Backend only: Frontend build not found.');
+    }
 });
 
 const PORT = process.env.PORT || 3001;
