@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Radio, Users, Play, Headphones } from 'lucide-react';
 import { BackgroundEffects, Header, Footer } from '../../components';
+import logo from '../../assets/logo.svg';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -38,6 +39,20 @@ const LandingPage = () => {
                     animate="visible"
                 >
                     <motion.section className="hero-section" variants={itemVariants}>
+                        <motion.div
+                            className="hero-logo"
+                            animate={{
+                                scale: [1, 1.05, 1],
+                                rotate: [0, 5, -5, 0]
+                            }}
+                            transition={{
+                                duration: 8,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            <img src={logo} alt="Muzicynk" />
+                        </motion.div>
                         <h1 className="hero-title">
                             Sync Your <span className="gradient-text">Sound</span>
                         </h1>

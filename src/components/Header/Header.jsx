@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Moon, Wifi, WifiOff, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
 import './Header.css';
 
 const Header = ({
@@ -60,20 +61,7 @@ const Header = ({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <svg viewBox="0 0 40 40" className="logo-svg">
-              <defs>
-                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#667eea" />
-                  <stop offset="100%" stopColor="#764ba2" />
-                </linearGradient>
-              </defs>
-              <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" />
-              <path
-                d="M15 12 L15 28 L28 20 Z"
-                fill="white"
-                opacity="0.9"
-              />
-            </svg>
+            <img src={logo} alt="Muzicynk Logo" className="logo-img" />
           </motion.div>
           <span className="logo-text">Muzicynk</span>
         </Link>

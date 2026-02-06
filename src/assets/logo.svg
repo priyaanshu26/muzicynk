@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#mainGradient)" stroke-width="2" opacity="0.3" />
+  
+  <!-- Sync Arrows -->
+  <path d="M100,40 A60,60 0 0,1 152,130 L165,140 M152,130 L135,135" 
+        fill="none" stroke="url(#mainGradient)" stroke-width="8" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M100,160 A60,60 0 0,1 48,70 L35,60 M48,70 L65,65" 
+        fill="none" stroke="url(#mainGradient)" stroke-width="8" stroke-linecap="round" filter="url(#glow)" />
+  
+  <!-- Play Button -->
+  <path d="M85,75 L85,125 L125,100 Z" fill="white" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Accent Dots -->
+  <circle cx="100" cy="40" r="4" fill="#1DB954" />
+  <circle cx="100" cy="160" r="4" fill="#1DB954" />
+</svg>

@@ -1,3 +1,4 @@
+import logo from '../../assets/logo.svg';
 import './Footer.css';
 
 const Footer = ({ version = 'v2.0.0' }) => {
@@ -5,6 +6,7 @@ const Footer = ({ version = 'v2.0.0' }) => {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-left">
+                    <img src={logo} alt="" className="footer-logo-img" />
                     <span className="footer-brand">Muzicynk</span>
                 </div>
                 <div className="footer-center">

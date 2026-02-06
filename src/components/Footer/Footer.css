@@ -15,6 +15,18 @@
     gap: var(--space-4);
 }
 
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.footer-logo-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
 .footer-brand {
     font-weight: var(--font-weight-bold);
     background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
