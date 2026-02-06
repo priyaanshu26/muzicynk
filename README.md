@@ -17,7 +17,7 @@ Think of it as “screen sharing, but for audio.”
 
 ---
 
-## 🧠 How It Works (High Level)
+## 🧠 How It Works
 
 1. Broadcaster creates a room
 2. Browser captures audio using the Web Audio API
