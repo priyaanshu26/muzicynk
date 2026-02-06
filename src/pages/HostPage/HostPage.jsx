@@ -5,9 +5,6 @@ import {
     Header,
     AlbumArt,
     TrackInfo,
-    ProgressBar,
-    ControlButtons,
-    VolumeSlider,
     DeviceCard,
     MusicVisualizer,
     ToastContainer,
@@ -148,26 +145,6 @@ const HostPage = () => {
                         />
                     </motion.section>
 
-                    {/* Controls (Local state only for now) */}
-                    {status === 'Live' && (
-                        <>
-                            <motion.section className="controls-section" variants={itemVariants}>
-                                <ControlButtons
-                                    isPlaying={isPlaying}
-                                    onPlayPause={() => setIsPlaying(!isPlaying)}
-                                    showSecondaryControls={false}
-                                />
-                            </motion.section>
-
-                            <motion.section className="volume-section" variants={itemVariants}>
-                                <VolumeSlider
-                                    volume={volume}
-                                    onVolumeChange={setVolume}
-                                    showLabel
-                                />
-                            </motion.section>
-                        </>
-                    )}
 
                     {/* Connection Section */}
                     <motion.section className="connection-section" variants={itemVariants}>
@@ -177,7 +154,7 @@ const HostPage = () => {
                                 <div className="link-input-group">
                                     <div className="link-display">
                                         <Link2 size={16} />
-                                        <span>muzicynk.app/join/{roomCode}</span>
+                                        <span>muzicynk.vercel.app/client?room={roomCode}</span>
                                     </div>
                                     <motion.button
                                         className="copy-btn"

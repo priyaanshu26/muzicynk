@@ -94,11 +94,6 @@
     cursor: pointer;
 }
 
-.volume-wrapper {
-    width: 80%;
-    margin-top: var(--space-4);
-}
-
 @media (max-width: 480px) {
     .client-content {
         gap: var(--space-4);

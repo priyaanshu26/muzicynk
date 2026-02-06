@@ -6,8 +6,6 @@ import {
     Header,
     AlbumArt,
     TrackInfo,
-    ProgressBar,
-    VolumeSlider,
     MusicVisualizer,
     BackgroundEffects,
     ToastContainer,
@@ -144,10 +142,6 @@ const ClientPage = () => {
                                 </button>
                             )}
 
-                            {/* Volume */}
-                            <div className="volume-wrapper">
-                                <VolumeSlider volume={volume} onVolumeChange={setVolume} />
-                            </div>
 
                             <button
                                 className="leave-btn"
