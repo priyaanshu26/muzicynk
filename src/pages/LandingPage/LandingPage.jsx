@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Radio, Users, Play, Headphones } from 'lucide-react';
 import { BackgroundEffects, Header, Footer } from '../../components';
@@ -7,6 +8,16 @@ import './LandingPage.css';
 
 const LandingPage = () => {
     const navigate = useNavigate();
+    const [showHostWarning, setShowHostWarning] = useState(false);
+
+    const handleHostClick = () => {
+        // Detect mobile based on screen width
+        if (window.innerWidth <= 768) {
+            setShowHostWarning(true);
+        } else {
+            navigate('/host');
+        }
+    };
 
     // Stagger variants
     const containerVariants = {
@@ -68,7 +79,7 @@ const LandingPage = () => {
                             className="option-card glass-card"
                             whileHover={{ scale: 1.05, translateY: -10 }}
                             whileTap={{ scale: 0.98 }}
-                            onClick={() => navigate('/host')}
+                            onClick={handleHostClick}
                         >
                             <div className="option-icon host-icon">
                                 <Radio size={48} />
@@ -124,6 +135,46 @@ const LandingPage = () => {
             </main>
 
             <Footer />
+
+            {/* Mobile Host Warning Modal */}
+            <AnimatePresence>
+                {showHostWarning && (
+                    <motion.div
+                        className="modal-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setShowHostWarning(false)}
+                    >
+                        <motion.div
+                            className="modal-content glass-card"
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="modal-icon">
+                                <Radio size={48} />
+                            </div>
+                            <h2>Hosting Coming Soon!</h2>
+                            <p>
+                                Broadcasting system audio is currently only available on
+                                <strong> Windows</strong> and <strong>macOS</strong> PCs.
+                            </p>
+                            <p className="modal-hint">
+                                Mobile hosting is in the works! You can still join as a
+                                listener from this device.
+                            </p>
+                            <button
+                                className="btn btn-primary"
+                                onClick={() => setShowHostWarning(false)}
+                            >
+                                Got it
+                            </button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

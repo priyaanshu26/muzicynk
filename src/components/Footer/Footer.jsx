@@ -11,7 +11,7 @@ const Footer = ({ version = 'v2.0.0' }) => {
                 </div>
                 <div className="footer-center">
                     <p className="footer-attribution">
-                        Handcrafted with <span className="heart">❤️</span> by <span className="dev-name">Priyanshu Chaudhary</span> & <span className="ai-credit">Antigravity AI</span>
+                        Handcrafted with <span className="heart">❤️</span> by <span className="dev-name">Priyanshu Chaudhary</span> & <span className="ai-credit">AI</span>
                     </p>
                 </div>
                 <div className="footer-right">

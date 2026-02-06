@@ -9,6 +9,16 @@ A modern, sleek web application that allows you to broadcast any audio from your
 - **Modern UI**: Sleek glassmorphism design with Framer Motion animations.
 - **Room Management**: Join via simple 6-digit codes or direct links.
 - **Cross-Platform**: Listen on any device (iOS, Android, Mac, PC).
+ 
+## 💻 Host Compatibility
+ 
+Broadcasting is supported on desktop operating systems due to system audio capture requirements:
+- ✅ **Windows** (Chrome/Edge recommended)
+- ✅ **macOS** (Chrome/Safari/Edge)
+- ❌ **Mobile** (Browsers cannot yet capture system audio)
+ 
+## 📱 Listener Compatibility
+- ✅ **Any device** with a modern web browser (iOS, Android, Windows, Mac, Linux).
 
 ## 🛠️ Tech Stack
 

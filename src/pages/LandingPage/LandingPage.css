@@ -144,6 +144,69 @@
     background: var(--color-border);
 }
 
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    z-index: 1000;
+}
+
+.modal-content {
+    max-width: 400px;
+    width: 100%;
+    padding: var(--space-8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--color-primary-start);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-2);
+}
+
+.modal-content h2 {
+    font-size: var(--font-size-2xl);
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.modal-hint {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted) !important;
+}
+
+.modal-content .btn {
+    margin-top: var(--space-4);
+    width: 100%;
+}
+
 
 @media (max-width: 768px) {
     .hero-title {
